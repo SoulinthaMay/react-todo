@@ -14,7 +14,7 @@ describe('AddTodo', () => {
     it('should call onSearch prop with valid data', () => {
         var todos = 'Check mail';
         var spy = expect.createSpy();
-        var addTodo = TestUtils.renderIntoDocument(<AddTodo onSearch={spy}/>);
+        var addTodo = TestUtils.renderIntoDocument(<AddTodo onAddTodo={spy}/>);
         var $el = $(ReactDOM.findDOMNode(addTodo));
 
         addTodo.refs.todos.value = todos;
@@ -26,7 +26,7 @@ describe('AddTodo', () => {
     it('should not call onSearch prop with valid data', () => {
         var todos = '';
         var spy = expect.createSpy();
-        var addTodo = TestUtils.renderIntoDocument(<AddTodo onSearch={spy}/>);
+        var addTodo = TestUtils.renderIntoDocument(<AddTodo onAddTodo={spy}/>);
         var $el = $(ReactDOM.findDOMNode(addTodo));
 
         addTodo.refs.todos.value = todos;
